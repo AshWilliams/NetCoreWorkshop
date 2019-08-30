@@ -8,7 +8,7 @@
 1. Crear una nueva ASP.NET Core application:
   1. File -> New -> Project -> ASP.NET Core Web Application (C#)
   2. Despues de nombrar el proyecto, seleccionen la versión de .NET Core y ASP.NET Core 2.2 en los dropdowns
-  3. Seleccionen `Web Application (Model-View-Controller)` y cambien el método de autenticación a `Individual User Accounts`.
+  3. Seleccionen `Web Application (Model-View-Controller)`, sin autenticación y sin https
 
 ### Scaffolding-Generar un controlador completo a partir de un nuevo modelo
 
