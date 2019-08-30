@@ -127,6 +127,8 @@ services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddX
 using System.Net.Http;
 using System.Net.Http.Headers;
 ```
+1.1 También añadir esta declaración `static HttpClient client = new HttpClient();` bajo la declaración del `_context`.
+
 2. Vamos a añadir el siguiente método, para consumir nuestra API creada en el paso anterior:
 ```c#
         public async Task<IActionResult> getProducts()
