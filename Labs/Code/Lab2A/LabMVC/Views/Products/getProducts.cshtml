@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LabMVC.Models.Product>
+
+@{
+    ViewData["Title"] = "getProducts";
+}
+
+<h1>Obtengo productos desde mi API</h1>
+<ul>
+    @foreach (var cm in Model)
+    {
+        <li>@cm.Name</li>
+    }
+</ul>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.4.1/css/tabulator.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/4.4.1/js/tabulator.js"></script>
+<div id="tabla-ejemplo"></div>
+
+<script type="text/javascript">
+    var table = new Tabulator("#tabla-ejemplo", {
+    height:"311px",
+    layout:"fitColumns",
+    placeholder:"No Data Set",
+    columns:[
+        {title:"Nombre", field:"name", sorter:"string", width:200},
+        {title:"Descripción", field:"description", sorter:"string"},
+    ]
+});
+
+var jsonProductos = @Html.Raw(ViewBag.JsonProductos)
+table.setData(jsonProductos);
+
+</script>

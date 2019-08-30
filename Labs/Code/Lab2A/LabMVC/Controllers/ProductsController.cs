@@ -6,13 +6,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using LabMVC.Models;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace LabMVC.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class ProductsController : Controller
     {
         private readonly LabMVCContext _context;
-
+        static HttpClient client = new HttpClient();
         public ProductsController(LabMVCContext context)
         {
             _context = context;
@@ -148,5 +151,25 @@ namespace LabMVC.Controllers
         {
             return _context.Product.Any(e => e.ID == id);
         }
+
+
+        public async Task<IActionResult> getProducts()
+        {
+            //client.BaseAddress = new Uri("http://localhost:57070/coolapi/products");
+            client.DefaultRequestHeaders.Accept.Clear();
+            client.DefaultRequestHeaders.Accept.Add(
+                new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = await client.GetAsync(new Uri("http://localhost:57070/coolapi/products"));
+            var productList = new List<Product>();
+            string JsonProductos = "";
+            if (response.IsSuccessStatusCode)
+            {
+                productList = await response.Content.ReadAsAsync<List<Product>>();
+                JsonProductos = await response.Content.ReadAsStringAsync();
+            }
+            ViewBag.JsonProductos = JsonProductos;
+            return View(productList);
+        }
+
     }
 }

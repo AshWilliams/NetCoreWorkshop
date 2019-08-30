@@ -9,6 +9,7 @@ using LabMVC.Models;
 
 namespace LabMVC.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class PeopleController : Controller
     {
         private readonly LabMVCContext _context;

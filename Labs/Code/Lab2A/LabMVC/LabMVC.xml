@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LabMVC</name>
+    </assembly>
+    <members>
+        <member name="M:LabMVC.Controllers.ServicioController.Get">
+            <summary>
+            Endpoint por defecto, retorna lista de productos
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
