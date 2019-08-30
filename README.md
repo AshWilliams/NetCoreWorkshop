@@ -23,9 +23,9 @@
     }
    ```
 
-2. Click derecho en el directorio `Controllers` y seleccionen Add -> Controller -> MVC Controller with views, Using Entity Framework.
+2. Click derecho en el directorio `Controllers` y seleccionen Add -> Controller -> MVC Controller with views, Using Entity Framework. Lo pueden nombrar `PersonaController`
 3. Seleccionar `Persona` as the **Model Class**.
-4. Crear un nuevo **Data context class** dandole click al botón `+`. Lo pueden nombrar `PersonaController`
+4. Crear un nuevo **Data context class** dandole click al botón `+`. 
 5. Click **Add** para que genere el control y las vistas de forma automática en base al modelo Persona.
 6. Revisar el archivo `appsettings.json` en `ConnectionStrings`, tomen nota del nombre de la base de datos.
 7. Desde el `SQL Server Object Explorer`, en `(localdb)`, luego en `Databases`, click derecho a la opción `Add New Database` y le dan el mismo nombre que tomaron nota en el paso anterior.
