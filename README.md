@@ -62,7 +62,7 @@
 2. Click derecho en el directorio `Controllers` y seleccionen Add -> Controller -> MVC Controller with views, Using Entity Framework.
 3. Seleccionar `Producto` as the **Model Class**.
 4. Seleccionar el **Data context class** que creamos en el ejercicio anterior.
-5. Click **Add** para que genere el control y las vistas de forma automática en base al modelo Producto. üeden llamar al contolador `ProductoController`
+5. Click **Add** para que genere el control y las vistas de forma automática en base al modelo Producto. Pueden llamar al controlador `ProductoController`
 6. Revisar el archivo `appsettings.json` en `ConnectionStrings`, tomen nota del nombre de la base de datos.
 7. Desde el `SQL Server Object Explorer`, en `(localdb)`, luego en `Databases`, click derecho a la opción `Add New Database` y le dan el mismo nombre que tomaron nota en el paso anterior.
 
