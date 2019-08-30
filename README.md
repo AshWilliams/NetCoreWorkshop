@@ -259,7 +259,7 @@ table.setData(jsonProductos);
 
 ### Variables de Sesión
 1. Ahora vamos a hacer 2 modificaciones a nuestro `Startup.cs`, primero en el método `ConfigureServices` vamos a añadir lo siguiente, `services.AddSession();` en la línea antes del `services.AddMvc`
-2. Ahora en el método `Configure`, añadimos lo siguiente, `app.UseSession();` atambién antes `app.UseMvc`
+2. Ahora en el método `Configure`, añadimos lo siguiente, `app.UseSession();` también antes `app.UseMvc`
 3. Añadan el siguiente `using` en el `HomeController`, `using Microsoft.AspNetCore.Http;`
 4. Añadan la siguiente instrucción al método `Index` en el `HomeController`
 ```c#
