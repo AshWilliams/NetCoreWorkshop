@@ -256,4 +256,29 @@ table.setData(jsonProductos);
 ```
 7. Corran la aplicación y vayan a la url `http://localhost:puerto/swagger/` para ver el resultado de la actividad.
 
+
+### Variables de Sesión
+1. Ahora vamos a hacer 2 modificaciones a nuestro `Startup.cs`, primero en el método `ConfigureServices` vamos a añadir lo siguiente, `services.AddSession();` en la línea antes del `services.AddMvc`
+2. Ahora en el método `Configure`, añadimos lo siguiente, `app.UseSession();` atambién antes `app.UseMvc`
+3. Añadan el siguiente `using` en el `HomeController`, `using Microsoft.AspNetCore.Http;`
+4. Añadan la siguiente instrucción al método `Index` en el `HomeController`
+```c#
+HttpContext.Session.SetString("SessionTest", "Esta es una variable de sesión");
+```
+5. En las vista `Index` del directorio `Views -> Home`, reemplazen el código por el siguiente
+```html
+@using Microsoft.AspNetCore.Http
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div>
+        @Context.Session.GetString("SessionTest")
+    </div>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+```
+6. Corran la aplicación y vayan a la url por defecto `http://localhost:puerto` para ver el resultado de la actividad.
+
 > **Note:** Felicitaciones por completar el WorkShop de .Net Core. Fue bastante contenido, pero ahora se quedan con las bases para comenzar a trabajar, el resto como siempre es investigación. Les dejo mi correo electrónico, para cualquier duda o consulta, no duden en escribirme [robert.rozas@microsoft.com](mailto:robert.rozas@microsoft.com)

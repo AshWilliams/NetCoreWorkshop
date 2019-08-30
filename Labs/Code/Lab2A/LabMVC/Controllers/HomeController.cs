@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LabMVC.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace LabMVC.Controllers
 {
@@ -18,7 +19,7 @@ namespace LabMVC.Controllers
         [Route("Home/Index")]
         public IActionResult Index()
         {
-
+            HttpContext.Session.SetString("SessionTest", "Esta es una variable de sesión");
             return View();
         }
 

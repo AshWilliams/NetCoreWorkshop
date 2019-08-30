@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using LabMVC.Models;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.Http;
 
 namespace LabMVC.Controllers
 {
@@ -18,7 +19,7 @@ namespace LabMVC.Controllers
         static HttpClient client = new HttpClient();
         public ProductsController(LabMVCContext context)
         {
-            _context = context;
+            _context = context;            
         }
 
         // GET: Products

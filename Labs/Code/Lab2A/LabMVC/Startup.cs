@@ -34,7 +34,7 @@ namespace LabMVC
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddSession();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2).AddXmlSerializerFormatters();
             services.AddDbContext<LabMVCContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("LabMVCContext")));
@@ -69,7 +69,7 @@ namespace LabMVC
 
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
